@@ -1,0 +1,443 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    --color-bg: #0f0f0f;
+    --color-bg-2: #212121;
+    --color: #48e;
+    --shadow: #48f;
+    background-color: var(--color-bg);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+div , section, body, a {
+    margin: 0;
+    padding: 0;
+}
+
+/*---------- SECCION PRINCIPAL ----------*/
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("photos/background.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100dvh;
+    z-index: -10;
+}
+
+.title-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10;
+}
+
+.img-title {
+    width: calc(100dvw - 1.5rem);
+    filter: drop-shadow(0px 0px 4px var(--shadow)) drop-shadow(0px 0px 20px var(--shadow));
+    z-index: 10;
+}
+
+
+.flechas {
+    position: fixed;
+    top: calc(90dvh - 1rem) ;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    z-index: 10;
+}
+
+
+.material-symbols-outlined-1 {
+    color: var(--color);
+    animation: parpadear1 1.3s infinite;
+}
+
+.material-symbols-outlined-2 {
+    color: var(--color);
+    animation: parpadear2 1.3s infinite;
+}
+
+.material-symbols-outlined-3 {
+    color: var(--color);
+    animation: parpadear3 1.3s infinite;
+}
+
+@keyframes parpadear1 {
+    0%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    75%{
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes parpadear2 {
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    75%{
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes parpadear3 {
+    0%{
+        opacity: 0;
+    }
+
+    25%{
+        opacity: 0;
+    }
+
+    75%{
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/*---------- PRIMER SECCION ENDS ---------*/
+
+/*---------- LINEAS ----------*/
+
+.container-lineas {
+    background: linear-gradient(to bottom, #000, #000, #000, var(--color-bg));
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.lineas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.linea {
+    background-color: var(--color);
+    height: 2px;
+    filter: drop-shadow(0 0 4px #fff) drop-shadow(0 0 8px #fff5);
+    margin: 10px 0px;
+    transform: scaleX(0); /* Escala inicial en X a 0 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transición suave para opacidad y escala */
+}
+
+.linea--1 {
+    margin-top: 0;
+    width: 96%;
+}
+
+.linea--2 {
+    width: 80%;
+}
+
+.linea--3 {
+    width: 60%;
+}
+
+.linea--4 {
+    width: 40%;
+}
+
+.linea--5 {
+    width: 20%;
+}
+
+.linea--6 {
+    width: 10%;
+}
+
+.linea--7 {
+    width: 20%;
+}
+
+.linea--8 {
+    width: 40%;
+}
+
+.linea--9 {
+    width: 60%;
+}
+
+.linea--10 {
+    width: 80%;
+}
+
+.linea--11 {
+    width: 96%;
+    margin-bottom: 0;
+}
+
+/*ANIMACIONES*/
+
+.linea {
+    height: 2px; /* Grosor de la línea */
+    opacity: 0; /* Oculto inicialmente */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transiciones suaves */
+    transform: scaleX(0); /* Escala horizontalmente para que sea pequeño al inicio */
+}
+
+.linea.visible {
+    opacity: 1; /* Totalmente visible */
+    transform: scaleX(1); /* Escala a su tamaño original */
+}
+
+
+/*---------- LINEAS ENDS ----------*/
+
+/*---------- SEGUNDA SECCION ----------*/
+
+/*H2*/
+
+h2 {
+    color: var(--color);
+    font-family: sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 100px;
+    font-weight: 100;
+    letter-spacing: .7rem;
+}
+
+/*BARRA DE NAVEGACION*/
+
+.barra-deslizable {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    box-shadow: 0px 20px 17px #000f;
+    margin-bottom: 4rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-bg-2);
+    overflow-x: auto; /* Activar scroll horizontal */
+    overflow-y: hidden; /* Ocultar el scroll vertical */
+    scrollbar-color: transparent transparent; /* Hace el scroll transparente en Firefox */
+}
+
+
+.barra-deslizable::-webkit-scrollbar {
+    height: 8px; /* Tamaño del scrollbar (ajustable) */
+}
+
+.barra-deslizable::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Color transparente para la barra */
+}
+
+.nav-link {
+    text-decoration: none;
+    font-family: sans-serif;
+    padding: 0.5rem;
+    color: #333;
+}
+
+.nav-link.active {
+    border-bottom: 2px solid var(--color);
+    color: var(--color);
+}
+
+
+/*ALBUMS*/
+.inicio-album {
+    display:none ;
+}
+
+.album-seccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:0;
+    background-color: var(--color-bg);
+}
+
+.album-div {
+    padding: 10px;
+    background-color: var(--color-bg-2);
+    border-radius: 14px;
+    text-align: center;
+    position: relative; /* Para que los bordes animados se posicionen correctamente */
+    overflow: hidden; /* Para ocultar cualquier contenido que sobresalga */
+}
+
+.album-div h3 {
+    font-size: 1.2rem; /* Tamaño del texto ajustado */
+    margin-bottom: 5px; /* Espaciado reducido */
+    color: var(--color);
+    font-family: sans-serif;
+}
+
+.galeria {
+    display: flex;
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten en filas */
+    justify-content: center;
+    gap: 5px; /* Espaciado entre imágenes */
+    max-height: 110px;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+}
+
+.galeria img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.galeria.expandido {
+    max-height: 1000px; /* Altura para mostrar más fotos */
+}
+
+.ver-mas {
+    margin-top: 10px;
+    padding: 8px 12px; 
+    border: none;
+    background-color: var(--color);
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ver-mas:hover {
+    background-color: var(--color);
+}
+
+/*---------- BORDE DE CAJA ANIMADO ----------*/
+
+.borde-animado-contenedor {
+    padding: 1px;
+    width: calc(100% - 7rem);
+    border-radius: 14px;
+    background-color: transparent;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    margin-bottom: 5rem ;
+}
+
+.borde-animado-contenedor::before {
+    content: '';
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background:radial-gradient(circle, #48e 10%, #fff 90%);
+    position: absolute;
+    top: -3rem;
+    left: -3rem;
+    z-index: -1;
+    box-shadow: 0px 0px 40px var(--shadow);
+    animation: mover 6s linear infinite;
+}
+
+.borde-animado-contenedor::after {
+    content: '';
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    background:radial-gradient(circle, #48e 10%, #fff 90%);
+    position: absolute;
+    top: -3rem;
+    left: -3rem;
+    z-index: -1;
+    box-shadow: 0px 0px 40px var(--shadow);
+    animation: mover2 6s linear infinite;
+}
+
+
+@keyframes mover {
+    0% { /*arriba izquierda*/
+        top: -3rem;
+        left: -3rem;
+    }
+    25% { /*arriba derecha*/
+        top: -3rem;
+        left: calc(100% - 3rem);
+    }
+    50% { /*abajo derecha*/
+        top: calc(100% - 3rem);
+        left: calc(100% - 3rem);
+    }
+    75% { /*abajo izquierda*/
+        top: calc(100% - 3rem);
+        left: -3rem;
+    }
+    100% { /*arriba izquierda*/
+        top: -3rem;
+        left: -3rem;
+    }
+}
+
+
+@keyframes mover2 {
+    0% {
+        top: calc(100% - 3rem);
+        left: calc(100% - 3rem);
+    }
+    25% {
+        top: calc(100% - 3rem);
+        left: -3rem;
+    }
+    50% {
+        top: -3rem;
+        left: -3rem;
+    }
+    75% {
+        top: -3rem;
+        left: calc(100% - 3rem);
+    }
+    100% {
+        top: calc(100% - 3rem);
+        left: calc(100% - 3rem);
+    }
+}
+
+/**/
+
