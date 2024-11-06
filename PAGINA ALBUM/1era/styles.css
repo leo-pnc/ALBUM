@@ -1,0 +1,261 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    --color-bg: #0f0f0f;
+    --color-bg-2: #212121;
+    --color: #48e;
+    --shadow: #48f;
+    background-color: var(--color-bg);
+}
+
+/*---------- SECCION PRINCIPAL ----------*/
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("photos/background.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: inset 0px -100px 90px #000;
+    height: 100dvh;
+    z-index: -10;
+}
+
+.title-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.img-title {
+    width: calc(100dvw - 1.5rem);
+    filter: drop-shadow(0px 0px 4px var(--shadow)) drop-shadow(0px 0px 20px var(--shadow));
+    z-index: 10;
+}
+
+.flechas {
+    position: fixed;
+    top: calc(90dvh - 1rem) ;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 100%;
+    z-index: 10;
+}
+
+
+.material-symbols-outlined-1 {
+    color: var(--color);
+    animation: parpadear1 1.3s infinite;
+}
+
+.material-symbols-outlined-2 {
+    color: var(--color);
+    animation: parpadear2 1.3s infinite;
+}
+
+.material-symbols-outlined-3 {
+    color: var(--color);
+    animation: parpadear3 1.3s infinite;
+}
+
+@keyframes parpadear1 {
+    0%{
+        opacity: 1;
+    }
+
+    50%{
+        opacity: 0;
+    }
+
+    75%{
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes parpadear2 {
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    75%{
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes parpadear3 {
+    0%{
+        opacity: 0;
+    }
+
+    25%{
+        opacity: 0;
+    }
+
+    75%{
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/*---------- DIV QUE VA A SUBIR ----------*/
+
+.div-subida {
+    position: fixed;
+    bottom: -100%; /* Comienza completamente oculto */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, 100%); /* Ajustar el centro y ocultar por completo */
+    background-color: rgba(255, 255, 255, 0.8); /* Color de fondo */
+    padding: 1rem;
+    transition: transform 0.6s ease, opacity 0.6s ease; /* Transiciones suaves para transform y opacidad */
+    z-index: 100; /* Asegúrate de que esté encima de otros elementos */
+    height: 100vh; /* Altura del div */
+    width: 90vw; /* Ancho del div */
+    opacity: 0; /* Inicialmente oculto */
+}
+
+/*---------- CONTENIDO REGALOS ----------*/
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  .titulo {
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #d81159;
+    margin: 0px 5px;
+  }
+  a {
+    color: #8f2d56;
+  }
+  
+  
+  .contenedor {
+    background-color: #0003;
+    height: 100dvh;
+    width: 100dvw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .regalo {
+    width: 35vw;
+    height: 17vh;
+    cursor: pointer;
+    margin: 1rem 0;
+    background-color: transparent;
+  }
+  .caja, .tapa {
+    background:
+      -webkit-radial-gradient(transparent 10%, transparent 15.1%),
+      -webkit-radial-gradient(transparent 7%, transparent 15.1%),
+      #ffbc42 ;
+    background-position: 0 0, 25px 25px;
+    background-size: 50px 50px;
+    position: relative;
+    margin: 0;
+  }
+  .caja {
+    width: 35vw;
+    height: 13vh;
+  }
+  .tapa {
+    width: 35vw;
+    height: 40px;
+    box-shadow: 1px 8px 3px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding: 0 2px;
+    background-color: #ffbc42 ;
+    /* transiciones */
+    top: 0;
+    left: 0;
+    transition: 
+      top ease-out 0.5s,
+      left ease-out 0.5s,
+      transform ease-out 0.5s;
+  }
+  .caja span, .tapa span {
+    position: absolute;
+    display: block;
+    background: #0496ff;
+    box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
+  }
+  .caja span:first-child {
+    width: 100%;
+    height: 20%;
+    top: 40%;
+  }
+  .caja span:last-child, .tapa span {
+    width: 20%;
+    height: 100%;
+    left: 40%;
+  }
+  .tapa span {
+    left: 40%;
+  }
+  .promo {
+    font-size: 25px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    position: relative;
+    height: 0;
+    top: 10px;
+    transition: all ease-out 0.7s;
+  }
+  .promo p {
+    font-size: 24px;
+    margin: 0;
+  }
+  .promo h2 {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  /* Efecto hover */
+  .regalo:hover .tapa {
+    top: -100px;
+    transform: rotateZ(10deg);
+    left: 10px;
+  }
+  .regalo:hover .promo {
+    top: -80px;
+  }
